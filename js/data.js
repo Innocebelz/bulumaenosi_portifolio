@@ -80,8 +80,8 @@ const PROJECTS_DATA = [
     icon: "vote",
     tech: ["React", "JavaScript", "Supabase", "PostgreSQL", "Tailwind CSS","FastAPI"],
     highlights: ["OTP Authentication", "Secure Voting", "Admin Dashboard", "Real-time Results", "Election Integrity"],
-    github: "https://github.com/Innocebelz/usaa-voting-system",
-    demo: "https://www.usaavoting.com",
+    github: "https://github.com/Innocebelz/usaavotingdemo",
+    demo: "https://bulumaenosi-portifolio.vercel.app/",
     size: "large",
   },
   {
