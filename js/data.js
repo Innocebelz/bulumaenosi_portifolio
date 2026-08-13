@@ -81,7 +81,7 @@ const PROJECTS_DATA = [
     tech: ["React", "JavaScript", "Supabase", "PostgreSQL", "Tailwind CSS","FastAPI"],
     highlights: ["OTP Authentication", "Secure Voting", "Admin Dashboard", "Real-time Results", "Election Integrity"],
     github: "https://github.com/Innocebelz/usaavotingdemo",
-    demo: "https://bulumaenosi-portifolio.vercel.app/",
+    demo: "https://usaavotingdemo.vercel.app/",
     size: "large",
   },
   {
