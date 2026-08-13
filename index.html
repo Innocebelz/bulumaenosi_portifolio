@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buluma Enosi — Computer Science Engineer | AI &amp; ML Enthusiast</title>
+  <meta name="description" content="Portfolio of Buluma Enosi, a Computer Science Engineering student at Ferhat Abbas University Sétif 1, focused on AI, Machine Learning, and Full-Stack Development.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Buluma Enosi">
+  <meta name="keywords" content="Buluma Enosi, Computer Science, AI, Machine Learning, Full-Stack Developer, Portfolio, Uganda, Algeria">
+  <link rel="canonical" href="https://bulumaenosi.dev/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Buluma Enosi — Computer Science Engineer | AI & ML Enthusiast">
+  <meta property="og:description" content="Computer Science Engineering student building secure web apps and exploring AI/ML, systems programming, and applied mathematics.">
+  <meta property="og:url" content="https://bulumaenosi.dev/">
+  <meta property="og:image" content="https://ui-avatars.com/api/?name=Buluma+Enosi&background=0B1120&color=22D3EE&size=1200&bold=true">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Buluma Enosi — Computer Science Engineer">
+  <meta name="twitter:description" content="CS Engineering student | AI & ML Enthusiast | Full-Stack Developer.">
+  <meta name="twitter:image" content="https://ui-avatars.com/api/?name=Buluma+Enosi&background=0B1120&color=22D3EE&size=1200&bold=true">
+
+  <!-- Favicon: initials monogram, matches the accent color -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B1120'/%3E%3Ctext x='50' y='62' font-family='Arial,sans-serif' font-size='42' font-weight='700' fill='%2322D3EE' text-anchor='middle'%3EBE%3C/text%3E%3C/svg%3E">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Buluma Enosi",
+      "image": "https://ui-avatars.com/api/?name=Buluma+Enosi&background=0B1120&color=22D3EE&size=400&bold=true",
+      "jobTitle": "Computer Science Engineering Student",
+      "affiliation": { "@type": "CollegeOrUniversity", "name": "Ferhat Abbas University – Sétif 1" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Sétif", "addressCountry": "DZ" },
+      "nationality": "Ugandan",
+      "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Full-Stack Development", "Systems Programming", "Linux", "Databases"],
+      "url": "https://bulumaenosi.dev/",
+      "sameAs": ["https://github.com/Innocebelz", "https://linkedin.com/in/bulumaenosi"]
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { bg: '#0B1120', card: '#111827', cyan: { DEFAULT: '#22D3EE' }, emerald: { DEFAULT: '#10B981' } },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-bg text-slate-200 antialiased">
+
+<div id="preloader" role="status" aria-live="polite" aria-label="Loading portfolio">
+  <div class="flex flex-col items-center gap-4">
+    <div class="loader-ring" aria-hidden="true"></div>
+    <p class="font-mono-ui text-xs text-cyan tracking-widest">COMPILING PORTFOLIO...</p>
+  </div>
+</div>
+
+<div id="scroll-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Page scroll progress"></div>
+<div id="mouse-glow"></div>
+<canvas id="particles" class="fixed inset-0 z-0" aria-hidden="true"></canvas>
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[70] focus:bg-cyan focus:text-bg focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
+
+<!-- NAVBAR -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between" aria-label="Primary">
+    <a href="#home" class="font-display font-bold text-lg tracking-tight">
+      <span class="grad-text">B.</span><span class="text-slate-100">Enosi</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-8 text-sm text-slate-300 font-medium">
+      <li><a href="#about" class="nav-link py-1">About</a></li>
+      <li><a href="#education" class="nav-link py-1">Education</a></li>
+      <li><a href="#skills" class="nav-link py-1">Skills</a></li>
+      <li><a href="#projects" class="nav-link py-1">Projects</a></li>
+      <li><a href="#leadership" class="nav-link py-1">Leadership</a></li>
+      <li><a href="#learning" class="nav-link py-1">Learning</a></li>
+      <li><a href="#contact" class="nav-link py-1">Contact</a></li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <a href="#contact" class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold bg-cyan text-bg px-4 py-2 rounded-full hover:bg-emerald transition-colors">Let's Talk</a>
+      <button id="menu-btn" class="md:hidden p-2 rounded-lg glass" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="md:hidden hidden px-6 pb-6">
+    <ul class="glass rounded-2xl p-4 flex flex-col gap-1 text-sm font-medium">
+      <li><a href="#about" class="block px-3 py-2 rounded-lg hover:bg-white/5">About</a></li>
+      <li><a href="#education" class="block px-3 py-2 rounded-lg hover:bg-white/5">Education</a></li>
+      <li><a href="#skills" class="block px-3 py-2 rounded-lg hover:bg-white/5">Skills</a></li>
+      <li><a href="#projects" class="block px-3 py-2 rounded-lg hover:bg-white/5">Projects</a></li>
+      <li><a href="#leadership" class="block px-3 py-2 rounded-lg hover:bg-white/5">Leadership</a></li>
+      <li><a href="#learning" class="block px-3 py-2 rounded-lg hover:bg-white/5">Learning</a></li>
+      <li><a href="#contact" class="block px-3 py-2 rounded-lg hover:bg-white/5">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main" class="relative z-10">
+
+  <!-- HERO -->
+  <section id="home" class="min-h-screen flex items-center pt-28 pb-20 px-6 relative overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-[32rem] h-[32rem] bg-cyan/10 rounded-full blur-[120px]" aria-hidden="true"></div>
+    <div class="absolute -bottom-40 -left-40 w-[32rem] h-[32rem] bg-emerald/10 rounded-full blur-[120px]" aria-hidden="true"></div>
+
+    <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <i data-lucide="cpu" class="float-icon w-10 h-10 top-[18%] left-[6%]"></i>
+      <i data-lucide="brain" class="float-icon w-12 h-12 top-[26%] right-[8%]"></i>
+      <i data-lucide="braces" class="float-icon w-9 h-9 bottom-[32%] left-[10%]"></i>
+      <i data-lucide="terminal" class="float-icon w-8 h-8 top-[58%] right-[16%]"></i>
+      <i data-lucide="database" class="float-icon w-9 h-9 bottom-[18%] right-[6%]"></i>
+    </div>
+
+    <div class="max-w-6xl mx-auto w-full grid md:grid-cols-[1fr_auto] gap-12 items-center relative">
+      <div data-aos="fade-up">
+        <div id="hero-avatar" class="avatar-frame w-20 h-20 mb-6"></div>
+        <p class="font-mono-ui text-cyan text-sm eyebrow mb-4">HELLO, I'M</p>
+        <h1 id="hero-name" class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-slate-50 mb-6"></h1>
+        <div class="font-mono-ui text-lg sm:text-2xl text-slate-300 mb-6 h-8">
+          <span id="typed-role" class="text-emerald"></span><span class="border-r-2 border-cyan animate-pulse ml-0.5"></span>
+        </div>
+        <p id="hero-intro" class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl mb-10"></p>
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a href="#projects" class="inline-flex items-center gap-2 bg-cyan text-bg font-semibold px-6 py-3 rounded-full hover:bg-emerald transition-colors">
+            <i data-lucide="folder-code" class="w-4 h-4"></i> View Projects
+          </a>
+          <a id="hero-cv" href="#" download class="inline-flex items-center gap-2 glass font-semibold px-6 py-3 rounded-full hover:border-cyan/50 transition-colors">
+            <i data-lucide="download" class="w-4 h-4"></i> Download CV
+          </a>
+          <a href="#contact" class="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-full border border-slate-700 hover:border-emerald/60 hover:text-emerald transition-colors">
+            <i data-lucide="mail" class="w-4 h-4"></i> Contact Me
+          </a>
+        </div>
+        <div id="hero-socials" class="flex items-center gap-5"></div>
+      </div>
+
+      <div data-aos="fade-left" data-aos-delay="150" class="glass glow-border rounded-2xl p-5 w-full max-w-sm font-mono-ui text-sm shadow-2xl">
+        <div class="flex items-center gap-1.5 mb-4">
+          <span class="w-3 h-3 rounded-full bg-red-500/70"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-500/70"></span>
+          <span class="w-3 h-3 rounded-full bg-green-500/70"></span>
+          <span class="ml-auto text-slate-500 text-xs">whoami.py</span>
+        </div>
+        <div id="hero-terminal-body"></div>
+      </div>
+    </div>
+
+    <a href="#about" class="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-slate-500 hover:text-cyan transition-colors" aria-label="Scroll to About section">
+      <span class="text-xs font-mono-ui">scroll</span>
+      <i data-lucide="chevron-down" class="w-4 h-4 animate-bounce"></i>
+    </a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-28 px-6 relative">
+    <div class="max-w-6xl mx-auto">
+      <div data-aos="fade-up" class="mb-14 max-w-2xl">
+        <p class="font-mono-ui text-cyan text-sm eyebrow mb-3">ABOUT</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-50">The engineer behind the code</h2>
+      </div>
+      <div class="grid lg:grid-cols-5 gap-10 items-start">
+        <div id="about-bio" data-aos="fade-right" class="lg:col-span-3 space-y-5 text-slate-300 leading-relaxed"></div>
+        <div id="about-highlights" data-aos="fade-left" class="lg:col-span-2 grid grid-cols-2 gap-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="py-28 px-6 relative">
+    <div class="max-w-4xl mx-auto">
+      <div data-aos="fade-up" class="mb-14">
+        <p class="font-mono-ui text-cyan text-sm eyebrow mb-3">EDUCATION</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-50">Academic journey</h2>
+      </div>
+      <div id="education-timeline" class="relative pl-10">
+        <div class="timeline-line absolute left-[7px] top-2 bottom-2 w-[2px] rounded-full opacity-60" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-28 px-6 relative">
+    <div class="max-w-6xl mx-auto">
+      <div data-aos="fade-up" class="mb-14 max-w-2xl">
+        <p class="font-mono-ui text-cyan text-sm eyebrow mb-3">SKILLS</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-50">Technical toolkit</h2>
+      </div>
+      <div id="skills-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-28 px-6 relative">
+    <div class="max-w-6xl mx-auto">
+      <div data-aos="fade-up" class="mb-14 max-w-2xl">
+        <p class="font-mono-ui text-cyan text-sm eyebrow mb-3">PROJECTS</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-50">Featured work</h2>
+      </div>
+      <div id="projects-grid" class="grid md:grid-cols-2 gap-8"></div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section id="leadership" class="py-28 px-6 relative">
+    <div class="max-w-6xl mx-auto">
+      <div data-aos="fade-up" class="mb-14 max-w-2xl">
+        <p class="font-mono-ui text-cyan text-sm eyebrow mb-3">LEADERSHIP</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-50">Leadership &amp; Community</h2>
+      </div>
+      <div id="leadership-card" data-aos="fade-up"></div>
+    </div>
+  </section>
+
+  <!-- LEARNING -->
+  <section id="learning" class="py-28 px-6 relative">
+    <div class="max-w-6xl mx-auto">
+      <div data-aos="fade-up" class="mb-14 max-w-2xl">
+        <p class="font-mono-ui text-cyan text-sm eyebrow mb-3">GROWTH</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-50">Currently learning, always building</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div data-aos="fade-right" class="glass rounded-2xl p-8">
+          <div class="flex items-center gap-2 mb-6">
+            <i data-lucide="loader" class="w-5 h-5 text-cyan animate-spin" style="animation-duration:3s"></i>
+            <h3 class="font-display font-bold text-slate-50">Currently Learning</h3>
+          </div>
+          <ul id="learning-current" class="space-y-3"></ul>
+        </div>
+        <div data-aos="fade-left" class="glass rounded-2xl p-8">
+          <div class="flex items-center gap-2 mb-6">
+            <i data-lucide="telescope" class="w-5 h-5 text-emerald"></i>
+            <h3 class="font-display font-bold text-slate-50">Future Interests</h3>
+          </div>
+          <div id="learning-future" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="py-24 px-6 relative">
+    <div class="max-w-6xl mx-auto">
+      <div id="achievements-grid" class="glass rounded-3xl p-10 sm:p-14 grid grid-cols-2 md:grid-cols-5 gap-8 text-center"></div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section id="philosophy" class="py-28 px-6 relative">
+    <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+      <i data-lucide="quote" class="w-9 h-9 text-cyan/50 mx-auto mb-6"></i>
+      <p id="philosophy-quote" class="font-display text-2xl sm:text-3xl leading-snug text-slate-100"></p>
+      <p class="mt-6 text-sm text-slate-500 font-mono-ui">— Buluma Enosi</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-28 px-6 relative">
+    <div class="max-w-6xl mx-auto">
+      <div data-aos="fade-up" class="mb-14 max-w-2xl">
+        <p class="font-mono-ui text-cyan text-sm eyebrow mb-3">CONTACT</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-50">Let's build something</h2>
+        <p class="text-slate-400 mt-3">Open to internships, collaborations, and conversations about AI, ML, and software engineering.</p>
+      </div>
+      <div class="grid lg:grid-cols-5 gap-8">
+        <div id="contact-cards" data-aos="fade-right" class="lg:col-span-2 space-y-4"></div>
+
+        <form id="contact-form" data-aos="fade-left" class="lg:col-span-3 glass rounded-2xl p-7 sm:p-9 space-y-5" novalidate>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="cf-name" class="block text-xs font-mono-ui text-slate-400 mb-2">Name</label>
+              <input id="cf-name" name="name" type="text" required autocomplete="name"
+                     class="w-full bg-white/5 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:border-cyan outline-none transition-colors" placeholder="Your name">
+            </div>
+            <div>
+              <label for="cf-email" class="block text-xs font-mono-ui text-slate-400 mb-2">Email</label>
+              <input id="cf-email" name="email" type="email" required autocomplete="email"
+                     class="w-full bg-white/5 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:border-cyan outline-none transition-colors" placeholder="you@example.com">
+            </div>
+          </div>
+          <div>
+            <label for="cf-subject" class="block text-xs font-mono-ui text-slate-400 mb-2">Subject</label>
+            <input id="cf-subject" name="subject" type="text" required
+                   class="w-full bg-white/5 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:border-cyan outline-none transition-colors" placeholder="What's this about?">
+          </div>
+          <div>
+            <label for="cf-message" class="block text-xs font-mono-ui text-slate-400 mb-2">Message</label>
+            <textarea id="cf-message" name="message" rows="5" required
+                      class="w-full bg-white/5 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:border-cyan outline-none transition-colors resize-none" placeholder="Tell me a bit about it..."></textarea>
+          </div>
+          <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan to-emerald text-bg font-semibold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity">
+            <i data-lucide="send" class="w-4 h-4"></i> Send Message
+          </button>
+          <p id="cf-status" class="text-sm text-emerald hidden" role="status">Thanks — your message has been queued. I'll reply soon.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-slate-800/70 py-12 px-6 relative z-10">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <a href="#home" class="font-display font-bold text-lg"><span class="grad-text">B.</span><span class="text-slate-100">Enosi</span></a>
+    <ul class="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
+      <li><a href="#about" class="hover:text-cyan transition-colors">About</a></li>
+      <li><a href="#projects" class="hover:text-cyan transition-colors">Projects</a></li>
+      <li><a href="#skills" class="hover:text-cyan transition-colors">Skills</a></li>
+      <li><a href="#contact" class="hover:text-cyan transition-colors">Contact</a></li>
+    </ul>
+    <div id="footer-socials" class="flex items-center gap-4"></div>
+  </div>
+  <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-slate-800/50 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600 font-mono-ui">
+    <p>&copy; <span id="year"></span> Buluma Enosi. All rights reserved.</p>
+    <p>Built with <span class="text-red-400">&hearts;</span> by Buluma Enosi</p>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-cyan text-bg flex items-center justify-center shadow-lg hover:bg-emerald transition-colors">
+  <i data-lucide="arrow-up" class="w-5 h-5"></i>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
