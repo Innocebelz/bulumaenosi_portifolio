@@ -213,10 +213,10 @@ function renderProjects() {
       }
     }
 
-    const linksHtml = `<div class="flex gap-3 mt-auto pt-2">
-      ${p.github ? `<a href="${p.github}" class="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-full border border-slate-700 hover:border-cyan/60 hover:text-cyan transition-colors"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>` : ''}
-      ${p.demo ? `<a href="${p.demo}" class="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-full bg-cyan/90 text-bg hover:bg-cyan transition-colors"><i data-lucide="external-link" class="w-4 h-4"></i> Live Demo</a>` : ''}
-    </div>`;
+    const linksHtml = (p.github || p.demo) ? `<div class="flex gap-3 mt-auto pt-2">
+      ${p.github ? `<a href="${p.github}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-full border border-slate-700 hover:border-cyan/60 hover:text-cyan transition-colors"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>` : ''}
+      ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-full bg-cyan/90 text-bg hover:bg-cyan transition-colors"><i data-lucide="external-link" class="w-4 h-4"></i> Live Demo</a>` : ''}
+    </div>` : '';
 
     body.innerHTML = `
       <h3 class="font-display text-lg sm:text-xl font-bold text-slate-50 mb-2">${p.title}</h3>
@@ -321,13 +321,15 @@ renderAchievements();
 renderPhilosophy();
 renderContact();
 
-lucide.createIcons();
-AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic', offset: 60 });
-
-window.addEventListener('load', () => {
+function hidePreloader() {
   const pre = document.getElementById('preloader');
-  setTimeout(() => pre.classList.add('hide'), 400);
-});
+  if (pre) pre.classList.add('hide');
+}
+window.addEventListener('load', () => setTimeout(hidePreloader, 400), { once: true });
+setTimeout(hidePreloader, 5000);
+
+if (window.lucide) lucide.createIcons();
+if (window.AOS) AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic', offset: 60 });
 
 if (window.Typed) {
   new Typed('#typed-role', {
@@ -350,7 +352,9 @@ const navLinks = document.querySelectorAll('.nav-link');
 function onScroll() {
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = progress + '%';
+  progressBar.setAttribute('aria-valuenow', String(Math.round(progress)));
 
   navbar.classList.toggle('bg-bg/80', scrollTop > 20);
   navbar.classList.toggle('backdrop-blur-md', scrollTop > 20);
@@ -377,10 +381,12 @@ const mobileMenu = document.getElementById('mobile-menu');
 function closeMobileMenu() {
   mobileMenu.classList.add('hidden');
   menuBtn.setAttribute('aria-expanded', 'false');
+  menuBtn.setAttribute('aria-label', 'Open menu');
 }
 menuBtn.addEventListener('click', () => {
   const isHidden = mobileMenu.classList.toggle('hidden');
   menuBtn.setAttribute('aria-expanded', String(!isHidden));
+  menuBtn.setAttribute('aria-label', isHidden ? 'Open menu' : 'Close menu');
 });
 mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
 document.addEventListener('keydown', (e) => {
@@ -441,28 +447,43 @@ const skillObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.skill-fill').forEach(node => skillObserver.observe(node));
 
 // ---------- Contact form ----------
-// No backend on a static site, so this opens the visitor's email client with
-// the message pre-filled. Swap this handler for a Formspree/EmailJS call if
-// you add a real backend later.
+// FormSubmit provides a form endpoint for this static site. The first
+// submission triggers an activation email for the portfolio owner; messages
+// are delivered after that email is confirmed.
 const form = document.getElementById('contact-form');
 const status = document.getElementById('cf-status');
-form.addEventListener('submit', (e) => {
+const submitButton = form.querySelector('button[type="submit"]');
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
   if (!form.checkValidity()) { form.reportValidity(); return; }
 
-  const name = document.getElementById('cf-name').value.trim();
-  const email = document.getElementById('cf-email').value.trim();
-  const subject = document.getElementById('cf-subject').value.trim();
-  const message = document.getElementById('cf-message').value.trim();
+  const data = Object.fromEntries(new FormData(form).entries());
+  data._subject = `Portfolio contact: ${data.subject}`;
+  data._template = 'table';
+  data._honey = '';
 
-  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-  const mailto = `mailto:${PROFILE.email}?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-  status.textContent = "Opening your email client…";
+  submitButton.disabled = true;
+  submitButton.classList.add('opacity-60', 'cursor-not-allowed');
+  status.textContent = 'Sending your message…';
+  status.className = 'text-sm text-slate-300';
   status.classList.remove('hidden');
-  window.location.href = mailto;
-  form.reset();
-  setTimeout(() => status.classList.add('hidden'), 5000);
+  try {
+    const response = await fetch(PROFILE.contactEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(data),
+    });
+    if (!response.ok) throw new Error('Form submission failed');
+    form.reset();
+    status.textContent = 'Thanks — your message has been sent. I’ll reply soon.';
+    status.className = 'text-sm text-emerald';
+  } catch (error) {
+    status.textContent = 'Your message could not be sent. Please email me directly instead.';
+    status.className = 'text-sm text-red-400';
+  } finally {
+    submitButton.disabled = false;
+    submitButton.classList.remove('opacity-60', 'cursor-not-allowed');
+  }
 });
 
 // ---------- Footer year ----------

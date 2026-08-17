@@ -22,6 +22,9 @@ const PROFILE = {
     "My long-term goal is to become an AI/ML Engineer, developing intelligent systems that solve meaningful, real-world problems.",
   ],
   email: "enositbale@gmail.com",
+  // FormSubmit forwards contact-form submissions to this address. After the
+  // first deployed submission, confirm the activation email it sends you.
+  contactEndpoint: "https://formsubmit.co/ajax/enositbale@gmail.com",
   github: "https://github.com/Innocebelz",
   linkedin: "https://linkedin.com/in/bulumaenosi",
   location: "Sétif, Algeria",
@@ -91,8 +94,8 @@ const PROJECTS_DATA = [
     icon: "puzzle",
     tech: ["JavaScript", "Manifest V3"],
     highlights: [],
-    github: "#",
-    demo: "#",
+    github: null,
+    demo: null,
     size: "small",
   },
   {
@@ -102,8 +105,8 @@ const PROJECTS_DATA = [
     icon: "layout-template",
     tech: ["HTML5", "Tailwind CSS", "JavaScript"],
     highlights: [],
-    github: "#",
-    demo: "#home",
+    github: null,
+    demo: null,
     size: "small",
   },
   {
@@ -113,7 +116,7 @@ const PROJECTS_DATA = [
     icon: "terminal-square",
     tech: [],
     highlights: ["Data Structures in C", "Algorithms", "SQL Practice Projects", "Python Automation Scripts", "Linux Utilities"],
-    github: "#",
+    github: null,
     demo: null,
     size: "large",
     listStyle: true, // renders highlights as a plain checklist instead of badges
